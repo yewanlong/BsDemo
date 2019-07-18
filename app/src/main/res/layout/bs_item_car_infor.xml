@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/my50dp"
+    android:background="@color/bs_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_one"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:lines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="购车百科"
+        android:textColor="@color/bs_black"
+        android:textSize="@dimen/my17dp" />
+
+    <TextView
+        android:id="@+id/image_one"
+        android:layout_width="35dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bs_splash_blue_2dp"
+        android:visibility="visible" />
+
+</LinearLayout>

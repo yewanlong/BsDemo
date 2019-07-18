@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyBSLibary</string>
+    <string name="net_work_msg">网络异常</string>
+</resources>

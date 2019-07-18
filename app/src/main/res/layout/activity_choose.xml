@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <include layout="@layout/bs_actionbar_top" />
+
+    <Button
+        android:id="@+id/bottom1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="单选框" />
+
+    <Button
+        android:id="@+id/bottom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多选款" />
+
+    <Button
+        android:id="@+id/bottom3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="时间选择" />
+
+    <Button
+        android:id="@+id/bottom4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="普通的弹窗确定" />
+</LinearLayout>
