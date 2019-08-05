@@ -69,7 +69,9 @@ public class BSImageSelectView extends BSGridView implements AdapterView.OnItemC
         super.onFinishInflate();
     }
 
-    public void setList(List<String> mList) {
+    public void setList(List<String> mList, boolean isClean) {
+        if (isClean)
+            list.clear();
         list.addAll(mList);
         if (list.size() > 8) {
             isShowAdd = false;

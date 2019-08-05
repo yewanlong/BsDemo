@@ -131,9 +131,9 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener,
     @Subscribe
     public void onEventMainThread(ImageSelEvent event) {
         if (event.getRemove() != 0) {
-            gridView.getList().clear();
-        }
-        gridView.setList(event.getImageList());
+            gridView.setList(event.getImageList(),true);
+        }else
+            gridView.setList(event.getImageList(),false);
         selectImage = maxImage - event.getImageList().size();
     }
 

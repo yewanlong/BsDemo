@@ -1,17 +1,13 @@
 package com.beisheng.mybslibary.activity.bs;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.beisheng.mybslibary.R;
@@ -21,7 +17,6 @@ import com.beisheng.mybslibary.imgsel.bean.ImageSelEvent;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Lkn on 2016/8/23.
@@ -47,6 +42,7 @@ public class PhotoPageActivity extends BSBaseSwipeBackActivity {
 
     @Override
     protected void initView() {
+        setStatusBar(getResources().getColor(R.color.bs_black));
         list = getIntent().getStringArrayListExtra("LIST_PHOTO");
         position = getIntent().getIntExtra("POSITION", 0);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
