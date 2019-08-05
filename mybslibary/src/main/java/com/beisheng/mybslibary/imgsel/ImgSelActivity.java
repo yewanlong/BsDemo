@@ -35,13 +35,17 @@ public class ImgSelActivity extends BSBaseSwipeBackActivity implements View.OnCl
     private Button btnConfirm;
     private String cropImagePath;
     private ImageView ivBack;
-    private ArrayList<String> result = new ArrayList<>();
     private RelativeLayout rlTitleBar;
 
     public static void startImageActivity(Activity activity, ImgSelConfig config) {
         Intent intent = new Intent(activity, ImgSelActivity.class);
         Constant.config = config;
         activity.startActivity(intent);
+    }
+
+    public static void startPhoneActivity(Activity activity) {
+        activity.startActivity(new Intent(activity, CameraActivity.class)
+                .putExtra("type", CameraActivity.REQUEST_CAMERA));
     }
 
     @Override

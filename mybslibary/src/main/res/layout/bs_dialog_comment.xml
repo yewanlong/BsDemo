@@ -40,14 +40,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_cancel"
+            android:id="@+id/tv_confirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="@dimen/my14dp"
-            android:text="取消"
-            android:textColor="@color/bs_grey"
+            android:text="确定"
+            android:background="@drawable/payback_bottom_lable_bg01"
+            android:textColor="@color/bs_white"
             android:textSize="@dimen/my16sp" />
 
         <TextView
@@ -56,15 +57,14 @@
             android:background="#EFEFEF" />
 
         <TextView
-            android:id="@+id/tv_confirm"
+            android:id="@+id/tv_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/payback_bottom_lable_bg01"
             android:gravity="center"
             android:padding="@dimen/my14dp"
-            android:text="确定"
-            android:textColor="@color/bs_white"
+            android:text="取消"
+            android:textColor="@color/bs_gray"
             android:textSize="@dimen/my16sp" />
     </LinearLayout>
 

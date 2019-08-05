@@ -8,4 +8,12 @@
         <attr name="iconRight" />
         <attr name="duration_max" />
     </declare-styleable>
+
+    <declare-styleable name="BSImage_Select">
+        <attr name="numColumns" format="integer" />
+        <attr name="horizontalSpacing" format="integer" />
+        <attr name="verticalSpacing" format="integer" />
+        <attr name="imgSrc" format="string" />
+        <attr name="maxImgSize" format="integer" />
+    </declare-styleable>
 </resources>

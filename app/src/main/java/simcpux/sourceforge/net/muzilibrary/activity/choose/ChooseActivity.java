@@ -1,6 +1,5 @@
 package simcpux.sourceforge.net.muzilibrary.activity.choose;
 
-import android.graphics.Color;
 import android.view.View;
 
 import com.beisheng.mybslibary.activity.BSDialog;

@@ -1,12 +1,15 @@
 package com.beisheng.mybslibary.activity.bs;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -150,6 +153,31 @@ public abstract class BSBaseSwipeBackActivity extends AppCompatActivity implemen
         }
 
         return false;
+    }
+
+    public boolean checkPermission(String[] permissions, int REQUEST_FOR_PERMISSIONS) {
+        if (lacksPermissions(permissions)) {
+            ActivityCompat.requestPermissions(this,
+                    permissions,
+                    REQUEST_FOR_PERMISSIONS);
+            return true;
+        }
+        return false;
+    }
+
+    // 判断权限集合
+    public boolean lacksPermissions(String... permissions) {
+        for (String permission : permissions) {
+            if (lacksPermission(permission)) {
+                return true;
+            }
+        }
+        return false;
+    }    // 判断是否缺少权限
+
+    private boolean lacksPermission(String permission) {
+        return ContextCompat.checkSelfPermission(getApplicationContext(), permission) ==
+                PackageManager.PERMISSION_DENIED;
     }
 
 }

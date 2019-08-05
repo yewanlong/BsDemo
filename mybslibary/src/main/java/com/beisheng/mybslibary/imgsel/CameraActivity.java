@@ -1,5 +1,6 @@
 package com.beisheng.mybslibary.imgsel;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,11 +13,16 @@ import android.widget.ImageView;
 
 import com.beisheng.mybslibary.R;
 import com.beisheng.mybslibary.activity.bs.BSBaseSwipeBackActivity;
+import com.beisheng.mybslibary.imgsel.bean.ImageSelEvent;
 import com.beisheng.mybslibary.imgsel.cameralibrary.JCameraView;
 import com.beisheng.mybslibary.imgsel.cameralibrary.listener.JCameraListener;
 import com.beisheng.mybslibary.imgsel.cameralibrary.util.FileUtil;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,7 +32,8 @@ import java.io.File;
 public class CameraActivity extends BSBaseSwipeBackActivity implements View.OnClickListener {
     private JCameraView jCameraView;
     private ImageView cameraImageView;
-    private static final int REQUEST_CAMERA = 5;
+    public static final int REQUEST_CAMERA = 5;
+    private int type = 0;
 
     @Override
     protected int getContentView() {
@@ -37,6 +44,7 @@ public class CameraActivity extends BSBaseSwipeBackActivity implements View.OnCl
 
     @Override
     protected void initView() {
+        type = getIntent().getIntExtra("type", 0);
         jCameraView = (JCameraView) findViewById(R.id.jcameraview);
         cameraImageView = $(R.id.iv_camera);
     }
@@ -50,13 +58,17 @@ public class CameraActivity extends BSBaseSwipeBackActivity implements View.OnCl
         jCameraView.setJCameraLisenter(new JCameraListener() {
             @Override
             public void captureSuccess(Bitmap bitmap) {
-                //获取图片bitmap
-//                Log.i("JCameraView", "bitmap = " + bitmap.getWidth());
                 String path = FileUtil.saveBitmap("JCamera", bitmap);
-                Intent mIntent = new Intent();
-                mIntent.putExtra("IMG_PATH", path);
-                // 设置结果，并进行传送
-                CameraActivity.this.setResult( Activity.RESULT_OK, mIntent);
+                if (type == 0) {
+                    Intent mIntent = new Intent();
+                    mIntent.putExtra("IMG_PATH", path);
+                    // 设置结果，并进行传送
+                    CameraActivity.this.setResult(Activity.RESULT_OK, mIntent);
+                } else {
+                    List<String> imageList = new ArrayList<>();
+                    imageList.add(path);
+                    EventBus.getDefault().post(new ImageSelEvent(imageList));
+                }
                 finish();
             }
 
