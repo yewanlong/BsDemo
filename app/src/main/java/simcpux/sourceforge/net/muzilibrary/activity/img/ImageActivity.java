@@ -79,7 +79,7 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener,
                             .needCrop(true) //是否裁剪
                             .bgColor(getResources().getColor(R.color.colorPrimary))//背景色
                             .needCamera(true)//第一个item是否显示相机
-                            .cropSize(1, 1, 500, 500)
+                            .cropSize(9999, 9998, 500, 500)
                             .butText("确定")
                             .butImage(R.mipmap.back_word)
                             .build();

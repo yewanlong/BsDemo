@@ -13,10 +13,6 @@ import com.beisheng.mybslibary.imgsel.easyadapter.abslistview.EasyLVHolder;
 
 import java.util.List;
 
-/**
- * @author yuyh.
- * @date 2016/8/5.
- */
 public class FolderListAdapter extends EasyLVAdapter<Folder> {
 
     private Context context;

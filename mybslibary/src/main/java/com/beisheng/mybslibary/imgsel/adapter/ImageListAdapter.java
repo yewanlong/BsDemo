@@ -17,10 +17,6 @@ import com.beisheng.mybslibary.imgsel.easyadapter.recyclerview.EasyRVHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author yuyh.
- * @date 2016/8/5.
- */
 public class ImageListAdapter extends EasyRVAdapter<Image> {
 
     private boolean showCamera;

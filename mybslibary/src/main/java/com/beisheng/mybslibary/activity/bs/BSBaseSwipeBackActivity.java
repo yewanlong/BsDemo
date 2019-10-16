@@ -27,10 +27,7 @@ import me.imid.swipebacklayout.lib.Utils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityBase;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 
-/**
- * Created by Lkn on 2016/7/13.
- */
-public abstract class BSBaseSwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
+public abstract class  BSBaseSwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
     public static BSDocTalkApplication app = BSDocTalkApplication.getInstance();
     public ShapeLoadingDialog pd;
@@ -118,7 +115,7 @@ public abstract class BSBaseSwipeBackActivity extends AppCompatActivity implemen
         }
     }
 
-    private boolean isLightColor(@ColorInt int color) {
+    protected boolean isLightColor(@ColorInt int color) {
         return ColorUtils.calculateLuminance(color) >= 0.5;
     }
 

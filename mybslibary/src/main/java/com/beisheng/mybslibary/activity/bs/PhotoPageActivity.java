@@ -18,9 +18,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
-/**
- * Created by Lkn on 2016/8/23.
- */
 public class PhotoPageActivity extends BSBaseSwipeBackActivity {
     private ArrayList<String> list = new ArrayList<>();
     private PhotoPageAdapter mPagerAdapter;

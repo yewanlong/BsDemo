@@ -40,8 +40,7 @@ public abstract class BaseFragment extends Fragment implements MyHttpCycleContex
             initView();
             initData();
             initListener();
-        }
-        return view;
+        }        return view;
     }
 
     protected abstract int getContentView();
@@ -55,7 +54,7 @@ public abstract class BaseFragment extends Fragment implements MyHttpCycleContex
     protected abstract boolean isApplyEventBus();
 
     @Override
-    public void onDestroy() {
+    public void onDestroy() {   
         if (isApplyEventBus()) EventBus.getDefault().unregister(this);
         super.onDestroy();
 

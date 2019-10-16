@@ -19,10 +19,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * 发票列表Adapter
- */
 public class ImageAdapter extends BaseAdapter {
 
     private List<String> list;

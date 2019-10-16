@@ -2,14 +2,21 @@ package simcpux.sourceforge.net.muzilibrary.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.beisheng.mybslibary.BSConstant;
+import com.beisheng.mybslibary.activity.BSSearchActivity;
+import com.beisheng.mybslibary.mode.EventSearch;
+import com.beisheng.mybslibary.utils.BSVToast;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.umeng.socialize.shareboard.SnsPlatform;
 import com.umeng.socialize.utils.ShareBoardlistener;
+
+import org.greenrobot.eventbus.Subscribe;
 
 import simcpux.sourceforge.net.muzilibrary.R;
 import simcpux.sourceforge.net.muzilibrary.activity.choose.ChooseActivity;
@@ -44,16 +51,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn_list).setOnClickListener(this);
         findViewById(R.id.btn_choose).setOnClickListener(this);
         findViewById(R.id.btn_msg).setOnClickListener(this);
+        findViewById(R.id.btn_search).setOnClickListener(this);
     }
 
     @Override
     protected boolean isApplyEventBus() {
-        return false;
+        return true;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_search:
+                BSSearchActivity.startSearchActivity(this, BSConstant.BS_SEARCH, ContextCompat.getColor(this,R.color.colorAccent));
+                break;
             case R.id.btn_img:
                 startActivity(new Intent(this, ImageActivity.class));
                 break;
@@ -97,5 +108,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                     }
                 });
+    }
+    @Subscribe
+    public void onEventMain(EventSearch eventSearch){
+        BSVToast.showLong(eventSearch.getContent());
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_top"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/my50dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/bs_white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/layout_left"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:onClick="back"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@mipmap/back_word"
+            android:tint="@color/bs_gray" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_corner_30dp_solid_grey"
+            android:drawableLeft="@mipmap/icon_home_searh"
+            android:drawablePadding="@dimen/my8dp"
+            android:gravity="center_vertical"
+            android:hint="搜索美食"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="15dp"
+            android:layout_centerVertical="true"
+
+            android:singleLine="true"
+            android:textColorHint="@color/bs_grey"
+            android:textSize="@dimen/my13sp" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:src="@mipmap/close"
+            android:layout_marginRight="10dp"
+            android:verticalScrollbarPosition="right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:tint="@color/bs_gray" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_right"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/my14sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

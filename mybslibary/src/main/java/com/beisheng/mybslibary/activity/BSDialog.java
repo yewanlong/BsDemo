@@ -6,22 +6,16 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.beisheng.mybslibary.R;
 import com.beisheng.mybslibary.imgsel.cameralibrary.util.ScreenUtils;
 
-
-/**
- * Created by Lkn on 2016/7/25.
- */
 public class BSDialog extends Dialog implements View.OnClickListener {
     private Context context;
     private TextView tv_confirm, tv_cancel, tv_title, tv_content;
     private BSDialogListener dialogListener;
     private String title, content, confirm, cancel;
-
     /**
      * @param context
      * @param title
@@ -29,6 +23,7 @@ public class BSDialog extends Dialog implements View.OnClickListener {
      * @param confirm
      * @param cancel
      */
+
     public BSDialog(Context context, String title, String content, String confirm,
                     String cancel, BSDialogListener dialogOnclickListener) {
         super(context, R.style.bs_my_dialog_theme);
@@ -46,6 +41,7 @@ public class BSDialog extends Dialog implements View.OnClickListener {
      * @param content
      * @param confirm
      */
+
     public BSDialog(Context context, String title, String content, String confirm
             , BSDialogListener dialogOnclickListener) {
         super(context, R.style.bs_my_dialog_theme);

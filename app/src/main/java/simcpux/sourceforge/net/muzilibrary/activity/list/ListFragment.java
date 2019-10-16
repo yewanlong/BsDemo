@@ -14,7 +14,6 @@ import java.util.Objects;
 import cn.finalteam.okhttpfinal.RequestParams;
 import simcpux.sourceforge.net.Constant;
 import simcpux.sourceforge.net.muzilibrary.R;
-import simcpux.sourceforge.net.muzilibrary.activity.list.ListActivity2;
 import simcpux.sourceforge.net.muzilibrary.adapter.ListAdapter;
 import simcpux.sourceforge.net.muzilibrary.model.ListData;
 

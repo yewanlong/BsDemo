@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bs_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar_search_top" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/bs_background"
+        android:dividerHeight="2px"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="搜索历史"
+                    android:textColor="@color/bs_black"
+                    android:textSize="@dimen/my14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="@dimen/my15dp"
+                    android:layout_height="@dimen/my15dp"
+                    android:src="@mipmap/delete"
+                    android:tint="@color/bs_gray" />
+            </LinearLayout>
+
+
+            <com.beisheng.mybslibary.widget.WarpLinearLayout
+                android:id="@+id/warpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:grivate="left"
+                app:horizontal_Space="@dimen/my10dp"
+                app:vertical_Space="@dimen/my10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

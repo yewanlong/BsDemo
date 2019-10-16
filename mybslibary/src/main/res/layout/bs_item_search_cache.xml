@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_cache"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_corner_25dp_solid_grey"
+    android:ellipsize="end"
+    android:lines="1"
+    android:maxEms="8"
+    android:paddingLeft="18dp"
+    android:paddingTop="4dp"
+    android:paddingRight="18dp"
+    android:paddingBottom="4dp"
+    android:textColor="@color/bs_gray"
+    android:textSize="@dimen/my13sp" />
